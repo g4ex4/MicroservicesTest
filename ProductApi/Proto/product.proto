@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProductApi";
+
+package product;
+
+service ProductGrpc {
+	rpc GetProduct (GetProductRequest) returns (GetProductResponse);
+}
+
+message GetProductRequest {
+	int32 id = 1;
+}
+
+message GetProductResponse {
+	int32 id = 1;
+	string name = 2;
+	string description = 3;
+	double price = 4;
+}
+
